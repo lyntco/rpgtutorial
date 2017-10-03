@@ -6,9 +6,15 @@ public class CameraController : MonoBehaviour {
 	public GameObject followTarget;
 	public float moveSpeed;
 	private Vector3 targetPosition;
+	private static bool cameraExists;
 
 	void Start () {
-		DontDestroyOnLoad(transform.gameObject);
+		if (!cameraExists) {
+			cameraExists = true;
+			DontDestroyOnLoad(transform.gameObject);
+		} else {
+			Destroy(gameObject);
+		}
 	}
 
 	void Update () {

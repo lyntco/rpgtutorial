@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour {
 	private bool playerMoving;
 	private Rigidbody2D myRigidBody;
 	private Vector2 lastMove;
+	private static bool playerExists;
 
 	void Start () {
 		animator = GetComponent<Animator>();
 		myRigidBody = GetComponent<Rigidbody2D>();
-		DontDestroyOnLoad(transform.gameObject);
+		if (!playerExists) {
+			playerExists = true;
+			DontDestroyOnLoad(transform.gameObject);
+		} else {
+			Destroy(gameObject);
+		}
 	}
 
 	void Update () {
