@@ -45,22 +45,13 @@ public class SlimeController : MonoBehaviour {
 				moveDirection = new Vector3(randomX, randomY, 0f);
 			}
 		}
-		if (reloading) {
-			waitToReload -= Time.deltaTime;
-			if (waitToReload < 0) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-				player.SetActive(true);
-			}
-		}
-	}
-
-	void OnCollisionEnter2D (Collision2D other) {
-		if (other.gameObject.name == "Player") {
-			// Destroy(other.gameObject); // KILL THE PLAYER
-			other.gameObject.SetActive(false);
-			reloading = true;
-			player = other.gameObject;
-		}
+		// if (reloading) {
+			// waitToReload -= Time.deltaTime;
+			// if (waitToReload < 0) {
+			// 	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			// 	player.SetActive(true);
+			// }
+		// }
 	}
 }
 

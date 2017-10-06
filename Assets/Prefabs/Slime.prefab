@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 95159973947394822}
   - component: {fileID: 60005173399326006}
   - component: {fileID: 114595893461913240}
-  - component: {fileID: 50789386471419724}
+  - component: {fileID: 114362106755763594}
+  - component: {fileID: 50866107574050896}
+  - component: {fileID: 114973437495562700}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -44,7 +46,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50789386471419724
+--- !u!50 &50866107574050896
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -114,6 +116,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114362106755763594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397224021138798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7e2cd7658f644e98ded09bb9e92ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 5
 --- !u!114 &114595893461913240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +144,18 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   waitToReload: 3
+--- !u!114 &114973437495562700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397224021138798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55246703713a448e5b34cc274b9f2edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePoints: 3
 --- !u!212 &212724489535746066
 SpriteRenderer:
   m_ObjectHideFlags: 1
