@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760693489151466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.511, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4216252039719732}
@@ -307,7 +307,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitLocation: {fileID: 4403095244090356}
   hitPointsChange: 2
-  damageBurst: {fileID: 0}
+  damageBurst: {fileID: 1352144224674026, guid: 0aa6b52e1522e4eaf9b8d9b02cdb92dc,
+    type: 2}
+  damageNumber: {fileID: 1845414121245552, guid: ac26b4a685f77497e96fcfce9dd9b67a,
+    type: 2}
 --- !u!212 &212053446366101836
 SpriteRenderer:
   m_ObjectHideFlags: 1

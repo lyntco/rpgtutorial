@@ -6,6 +6,7 @@ public class HurtEnemy : MonoBehaviour {
 	public Transform hitLocation;
 	public int hitPointsChange;
 	public GameObject damageBurst;
+	public GameObject damageNumber;
 	void Start () {
 
 	}
@@ -16,9 +17,10 @@ public class HurtEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
-			// Destroy(other.gameObject); // KILL THE ENEMY
 			other.gameObject.GetComponent<EnemyHealthManager>().ChangeHealth(-hitPointsChange);
 			Instantiate(damageBurst, hitLocation.position, hitLocation.rotation);
+			var clone = (GameObject) Instantiate(damageNumber, hitLocation.position, Quaternion.Euler(Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().damageNumber = hitPointsChange;
 		}
 	}
 }
