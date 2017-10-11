@@ -13,7 +13,6 @@ public class FloatingNumbers : MonoBehaviour {
 	void Update () {
 		displayNumber.text = "" + damageNumber;
 		float yValue = transform.position.y + (moveSpeed * Time.deltaTime);
-		print(yValue);
 		transform.position = new Vector3(transform.position.x, yValue, transform.position.z);
 	}
 }

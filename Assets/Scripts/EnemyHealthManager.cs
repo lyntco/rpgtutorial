@@ -7,15 +7,19 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int maxHealth;
 
 	private SpriteRenderer sprite;
+	private PlayerStats playerStats;
+	public int expToGive;
 
 	void Start () {
 		currentHealth = maxHealth;
 		sprite = GetComponent<SpriteRenderer>();
+		playerStats = FindObjectOfType<PlayerStats>();
 	}
 
 	void Update () {
 		if (currentHealth <= 0) {
 			Destroy(gameObject);
+			playerStats.AddExperience(expToGive);
 		}
 	}
 

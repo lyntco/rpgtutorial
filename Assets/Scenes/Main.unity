@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 39842834}
   - component: {fileID: 39842833}
   - component: {fileID: 39842837}
+  - component: {fileID: 39842838}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -197,6 +198,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1547343305}
+  - {fileID: 376101305}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -219,6 +221,20 @@ MonoBehaviour:
   healthBar: {fileID: 1547343306}
   HPText: {fileID: 411734967}
   playerHealth: {fileID: 804442424}
+--- !u!114 &39842838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39842832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a296195ab730e4ebc99e8cc3742a3f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 0
+  currentExp: 0
+  toLevelUp: 00000000140000003200000064000000fa000000f4010000e8030000d6060000c4090000b80b0000
 --- !u!1001 &201749399
 Prefab:
   m_ObjectHideFlags: 0
@@ -344,6 +360,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelToLoad: house1
   exitPoint: house1FrontDoor
+--- !u!1 &376101304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 376101305}
+  - component: {fileID: 376101307}
+  - component: {fileID: 376101306}
+  m_Layer: 5
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &376101305
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376101304}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 39842836}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -377.89996, y: 325.2}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &376101306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376101304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.98999965, g: 0.99550456, b: 0.9898052, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'LVL: XX'
+--- !u!222 &376101307
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376101304}
 --- !u!1 &388078728
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +547,7 @@ GameObject:
   - component: {fileID: 411734968}
   - component: {fileID: 411734967}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -37}
+  m_AnchoredPosition: {x: 105, y: -53.8}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547343306
@@ -835,6 +925,11 @@ Prefab:
     - target: {fileID: 4335914938294990, guid: 2575bdeeb36dc4390be267dd7c191ad3, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114969542132068772, guid: 2575bdeeb36dc4390be267dd7c191ad3,
+        type: 2}
+      propertyPath: startDirection.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2575bdeeb36dc4390be267dd7c191ad3, type: 2}
@@ -1022,6 +1117,16 @@ Prefab:
         type: 2}
       propertyPath: pointName
       value: house1SecretBackDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114969542132068772, guid: 2575bdeeb36dc4390be267dd7c191ad3,
+        type: 2}
+      propertyPath: startDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114969542132068772, guid: 2575bdeeb36dc4390be267dd7c191ad3,
+        type: 2}
+      propertyPath: startDirection.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2575bdeeb36dc4390be267dd7c191ad3, type: 2}

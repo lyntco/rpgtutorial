@@ -425,6 +425,16 @@ Prefab:
       propertyPath: pointName
       value: house1SecretBackDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 114969542132068772, guid: 2575bdeeb36dc4390be267dd7c191ad3,
+        type: 2}
+      propertyPath: startDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114969542132068772, guid: 2575bdeeb36dc4390be267dd7c191ad3,
+        type: 2}
+      propertyPath: startDirection.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2575bdeeb36dc4390be267dd7c191ad3, type: 2}
   m_IsPrefabParent: 0

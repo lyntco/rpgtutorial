@@ -210,9 +210,7 @@
   </objectgroup>
  </tile>
  <tile id="1272">
-  <objectgroup draworder="index">
-   <object id="1" x="-0.187224" y="0" width="16.3821" height="16.2885"/>
-  </objectgroup>
+  <objectgroup draworder="index"/>
  </tile>
  <tile id="1273">
   <objectgroup draworder="index">
