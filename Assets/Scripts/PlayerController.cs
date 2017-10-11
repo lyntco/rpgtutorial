@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
+	public float diagonalMoveModifier;
 	public Vector2 lastMove;
 	public string startPoint;
 
+	private float currentMoveSpeed;
 	private Animator animator;
 	private bool playerMoving;
 	private Rigidbody2D myRigidBody;
@@ -34,13 +36,13 @@ public class PlayerController : MonoBehaviour {
 		if (!attacking) {
 			if (moveX > 0.1f || moveX < -0.1f) {
 				// transform.Translate(new Vector3(moveX * moveSpeed * Time.deltaTime, 0f, 0f));
-				myRigidBody.velocity = new Vector2(moveX * moveSpeed, myRigidBody.velocity.y);
+				myRigidBody.velocity = new Vector2(moveX * currentMoveSpeed, myRigidBody.velocity.y);
 				playerMoving = true;
 				lastMove = new Vector2(moveX, 0f);
 			}
 			if (moveY > 0.1f || moveY < -0.1f) {
 				// transform.Translate(new Vector3(0f, moveY * moveSpeed * Time.deltaTime, 0f));
-				myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, moveY * moveSpeed);
+				myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, moveY * currentMoveSpeed);
 				playerMoving = true;
 				lastMove = new Vector2(0f, moveY);
 			}
@@ -56,6 +58,12 @@ public class PlayerController : MonoBehaviour {
 				attacking = true;
 				// myRigidBody.velocity = Vector2.zero;
 				animator.SetBool("PlayerAttacking", true);
+			}
+
+			if (Mathf.Abs(moveX) > 0.1f && Mathf.Abs(moveY) > 0.1f) {
+				currentMoveSpeed = moveSpeed * diagonalMoveModifier;
+			} else {
+				currentMoveSpeed = moveSpeed;
 			}
 		}
 
