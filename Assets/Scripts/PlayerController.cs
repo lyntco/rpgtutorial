@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
 	public Vector2 lastMove;
+	public string startPoint;
 
 	private Animator animator;
 	private bool playerMoving;
