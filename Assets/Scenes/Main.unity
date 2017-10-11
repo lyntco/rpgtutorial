@@ -662,11 +662,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114469887912907316, guid: ea3468ab09d9c454cb3bcb86d26e3b27,
-        type: 2}
-      propertyPath: diagonalMoveModifier
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea3468ab09d9c454cb3bcb86d26e3b27, type: 2}
   m_IsPrefabParent: 0
