@@ -39,7 +39,6 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	public void ChangePlayerHealth (int hitPoints) {
 		playerCurrentHealth += hitPoints;
-		print("hitpoints" + hitPoints);
 		if (hitPoints < 0) {
 			flashActive = true;
 			flashCounter = flashLength;
