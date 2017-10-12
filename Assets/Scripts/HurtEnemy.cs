@@ -5,10 +5,13 @@ using UnityEngine;
 public class HurtEnemy : MonoBehaviour {
 	public Transform hitLocation;
 	public int hitPointsChange;
+	private int currentDamage;
 	public GameObject damageBurst;
 	public GameObject damageNumber;
-	void Start () {
 
+	private PlayerStats playerStats;
+	void Start () {
+		playerStats = FindObjectOfType<PlayerStats>();
 	}
 
 	void Update () {
@@ -17,10 +20,11 @@ public class HurtEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
-			other.gameObject.GetComponent<EnemyHealthManager>().ChangeHealth(-hitPointsChange);
+			currentDamage = -(hitPointsChange - playerStats.currentAttack);
+			other.gameObject.GetComponent<EnemyHealthManager>().ChangeHealth(-currentDamage);
 			Instantiate(damageBurst, hitLocation.position, hitLocation.rotation);
 			var clone = (GameObject) Instantiate(damageNumber, hitLocation.position, Quaternion.Euler(Vector3.zero));
-			clone.GetComponent<FloatingNumbers>().damageNumber = hitPointsChange;
+			clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
 		}
 	}
 }

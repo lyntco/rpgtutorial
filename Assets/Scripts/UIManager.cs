@@ -20,10 +20,11 @@ public class UIManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		playerStats = GetComponent<PlayerStats>();
+		healthBar.maxValue = playerHealth.playerMaxHealth;
 	}
 
 	void Update () {
-		int maxHealth = playerHealth.playerMaxHealth;
+		int maxHealth = playerStats.currentHP;
 		int currentHealth = playerHealth.playerCurrentHealth;
 		healthBar.maxValue = maxHealth;
 		healthBar.value = currentHealth;
