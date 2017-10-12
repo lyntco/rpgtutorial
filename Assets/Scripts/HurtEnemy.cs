@@ -20,7 +20,7 @@ public class HurtEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
-			currentDamage = -(hitPointsChange - playerStats.currentAttack);
+			currentDamage = hitPointsChange + playerStats.currentAttack;
 			other.gameObject.GetComponent<EnemyHealthManager>().ChangeHealth(-currentDamage);
 			Instantiate(damageBurst, hitLocation.position, hitLocation.rotation);
 			var clone = (GameObject) Instantiate(damageNumber, hitLocation.position, Quaternion.Euler(Vector3.zero));
