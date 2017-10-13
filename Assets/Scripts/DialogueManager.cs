@@ -8,15 +8,23 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
 
 	public bool dialogueActive;
+	public string[] dialogueLines;
+	public int currentLine;
 
 	void Start () {
 		dialogueBox.SetActive(false);
+		currentLine = 0;
 	}
 
 	void Update () {
-		if (dialogueActive && Input.GetKeyDown(KeyCode.Space)) {
+		if (dialogueActive && Input.GetKeyUp(KeyCode.Space)) {
+			dialogueText.text = dialogueLines[currentLine];
+			currentLine++;
+		}
+		if (currentLine >= dialogueLines.Length) {
 			dialogueBox.SetActive(false);
 			dialogueActive = false;
+			currentLine = 0;
 		}
 	}
 
@@ -24,5 +32,10 @@ public class DialogueManager : MonoBehaviour {
 		dialogueActive = true;
 		dialogueBox.SetActive(true);
 		dialogueText.text = text;
+	}
+
+	public void ShowDialogue() {
+		dialogueActive = true;
+		dialogueBox.SetActive(true);
 	}
 }

@@ -1164,6 +1164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: Hahaha hi there
+  dialogueLines:
+  - One
+  - two
+  - THREE
+  - FOUR
+  - Five
 --- !u!61 &1316591128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1421,6 +1427,11 @@ MonoBehaviour:
   dialogueBox: {fileID: 616690568}
   dialogueText: {fileID: 811556690}
   dialogueActive: 0
+  dialogueLines:
+  - Test 1
+  - Testamundo 2
+  - Testamundo 3
+  currentLine: 0
 --- !u!1 &1547343304
 GameObject:
   m_ObjectHideFlags: 0
