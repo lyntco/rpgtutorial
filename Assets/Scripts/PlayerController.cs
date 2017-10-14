@@ -17,11 +17,14 @@ public class PlayerController : MonoBehaviour {
 	public float attackTime;
 	private float attackTimeCounter;
 
+	public bool canMove;
+
 	void Start () {
 		animator = GetComponent<Animator>();
 		myRigidBody = GetComponent<Rigidbody2D>();
 		if (!playerExists) {
 			playerExists = true;
+			canMove = true;
 			DontDestroyOnLoad(transform.gameObject);
 		} else {
 			Destroy(gameObject);
@@ -30,6 +33,11 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		playerMoving = false;
+		if (!canMove) {
+			myRigidBody.velocity = Vector2.zero;
+			return;
+		}
+
 		float moveX = Input.GetAxisRaw("Horizontal");
 		float moveY = Input.GetAxisRaw("Vertical");
 

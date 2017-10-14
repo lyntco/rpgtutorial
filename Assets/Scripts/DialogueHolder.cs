@@ -18,11 +18,15 @@ public class DialogueHolder : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.name == "Player") {
 			if (Input.GetKeyUp(KeyCode.Space)) {
-				// dialogueManager.ShowBox(dialogue);
 				if (!dialogueManager.dialogueActive) {
 					dialogueManager.dialogueLines = dialogueLines;
 					dialogueManager.currentLine = 0;
 					dialogueManager.ShowDialogue();
+				}
+				VillagerMovement villager = GetComponentInParent<VillagerMovement>();
+				if (villager != null) {
+					dialogueManager.dialogueActive = true;
+					villager.canMove = false;
 				}
 			}
 		}

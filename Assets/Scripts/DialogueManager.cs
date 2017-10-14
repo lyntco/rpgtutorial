@@ -11,9 +11,12 @@ public class DialogueManager : MonoBehaviour {
 	public string[] dialogueLines;
 	public int currentLine;
 
+	private PlayerController player;
+
 	void Start () {
 		dialogueBox.SetActive(false);
 		currentLine = 0;
+		player = FindObjectOfType<PlayerController>();
 	}
 
 	void Update () {
@@ -22,20 +25,16 @@ public class DialogueManager : MonoBehaviour {
 			currentLine++;
 		}
 		if (currentLine >= dialogueLines.Length) {
-			dialogueBox.SetActive(false);
 			dialogueActive = false;
+			dialogueBox.SetActive(false);
 			currentLine = 0;
+			player.canMove = true;
 		}
-	}
-
-	public void ShowBox(string text) {
-		dialogueActive = true;
-		dialogueBox.SetActive(true);
-		dialogueText.text = text;
 	}
 
 	public void ShowDialogue() {
 		dialogueActive = true;
 		dialogueBox.SetActive(true);
+		player.canMove = false;
 	}
 }
