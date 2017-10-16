@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void ShowDialogue() {
 		dialogueActive = true;
+		dialogueText.text = dialogueLines[currentLine];
 		dialogueBox.SetActive(true);
 		player.canMove = false;
 	}

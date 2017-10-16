@@ -6,7 +6,7 @@ public class QuestManager : MonoBehaviour {
 
 	public QuestObject[] quests;
 	public bool[] questsCompleted;
-	public DialogueManager dialogueMManager;
+	public DialogueManager dialogueManager;
 
 	void Start () {
 		questsCompleted = new bool[quests.Length];
@@ -17,9 +17,9 @@ public class QuestManager : MonoBehaviour {
 	}
 
 	public void ShowQuestText(string questText) {
-		dialogueMManager.dialogueLines = new string[1];
-		dialogueMManager.dialogueLines[0] = questText;
-		dialogueMManager.currentLine = 0;
-		dialogueMManager.ShowDialogue();
+		dialogueManager.dialogueLines = new string[1];
+		dialogueManager.dialogueLines[0] = questText;
+		dialogueManager.currentLine = 0;
+		dialogueManager.ShowDialogue();
 	}
 }

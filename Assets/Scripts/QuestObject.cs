@@ -5,7 +5,6 @@ using UnityEngine;
 public class QuestObject : MonoBehaviour {
 	public int questNumber;
 	public QuestManager questManager;
-	public DialogueManager dialogueManager;
 	public string startText;
 	public string endText;
 
