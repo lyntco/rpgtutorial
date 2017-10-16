@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			Destroy(gameObject);
 		}
+		lastMove = new Vector2(0f, -1f);
 	}
 
 	void Update () {
