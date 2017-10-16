@@ -8,12 +8,20 @@ public class QuestObject : MonoBehaviour {
 	public string startText;
 	public string endText;
 
+	public bool isItemQuest;
+	public string targetItem;
+
 	void Start () {
 
 	}
 
 	void Update () {
-
+		if (isItemQuest) {
+			if (questManager.itemCollected == targetItem) {
+				questManager.itemCollected = null;
+				EndQuest();
+			}
+		}
 	}
 
 	public void StartQuest() {
