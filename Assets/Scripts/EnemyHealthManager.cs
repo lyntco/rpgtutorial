@@ -10,14 +10,19 @@ public class EnemyHealthManager : MonoBehaviour {
 	private PlayerStats playerStats;
 	public int expToGive;
 
+	public string enemyName;
+	private QuestManager questManager;
+
 	void Start () {
 		currentHealth = maxHealth;
 		sprite = GetComponent<SpriteRenderer>();
 		playerStats = FindObjectOfType<PlayerStats>();
+		questManager = FindObjectOfType<QuestManager>();
 	}
 
 	void Update () {
 		if (currentHealth <= 0) {
+			questManager.enemyKilled = enemyName;
 			Destroy(gameObject);
 			playerStats.AddExperience(expToGive);
 		}
