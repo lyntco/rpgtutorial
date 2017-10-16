@@ -17,6 +17,9 @@ public class SlimeController : MonoBehaviour {
 	private bool reloading;
 	private GameObject player;
 
+	private bool canMove;
+	private DialogueManager dialogueManager;
+
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D>();
 		// timeBetweenMoveCounter = timeBetweenMove;
@@ -24,10 +27,12 @@ public class SlimeController : MonoBehaviour {
 		timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.15f, timeBetweenMove * 1.55f);
 		timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
 		moving = Random.value < 0.5;
+		dialogueManager = FindObjectOfType<DialogueManager>();
 	}
 
 	void Update () {
-		if (moving) {
+		canMove = !dialogueManager.dialogueActive;
+		if (moving && canMove) {
 			timeToMoveCounter -= Time.deltaTime;
 			rigidbody.velocity = moveDirection;
 			if (timeToMoveCounter < 0) {
