@@ -33,6 +33,8 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void ShowDialogue() {
+		player.playerMoving = false;
+		player.attacking = false;
 		dialogueActive = true;
 		dialogueBox.SetActive(true);
 		player.canMove = false;

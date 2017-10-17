@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour {
 
 	private float currentMoveSpeed;
 	private Animator animator;
-	private bool playerMoving;
+	public bool playerMoving;
 	private Rigidbody2D myRigidBody;
 	private static bool playerExists;
-	private bool attacking;
+	public bool attacking;
 	public float attackTime;
 	private float attackTimeCounter;
 
@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		playerMoving = false;
+		animator.SetBool("PlayerMoving", playerMoving);
+		animator.SetBool("PlayerAttacking", attacking);
 		if (!canMove) {
 			myRigidBody.velocity = Vector2.zero;
 			return;
