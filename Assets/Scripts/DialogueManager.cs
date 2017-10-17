@@ -21,7 +21,6 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update () {
 		if (dialogueActive && Input.GetKeyUp(KeyCode.Space)) {
-			dialogueText.text = dialogueLines[currentLine];
 			currentLine++;
 		}
 		if (currentLine >= dialogueLines.Length) {
@@ -30,11 +29,11 @@ public class DialogueManager : MonoBehaviour {
 			currentLine = 0;
 			player.canMove = true;
 		}
+		dialogueText.text = dialogueLines[currentLine];
 	}
 
 	public void ShowDialogue() {
 		dialogueActive = true;
-		dialogueText.text = dialogueLines[currentLine];
 		dialogueBox.SetActive(true);
 		player.canMove = false;
 	}
