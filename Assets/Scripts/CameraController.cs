@@ -22,6 +22,11 @@ public class CameraController : MonoBehaviour {
 		} else {
 			Destroy(gameObject);
 		}
+
+		if (boundingBox == null) {
+			boundingBox = FindObjectOfType<Bounds>().GetComponent<BoxCollider2D>();
+		}
+
 		minBounds = boundingBox.bounds.min;
 		maxBounds = boundingBox.bounds.max;
 		camera = GetComponent<Camera>();

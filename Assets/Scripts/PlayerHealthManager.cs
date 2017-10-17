@@ -11,13 +11,17 @@ public class PlayerHealthManager : MonoBehaviour {
 	private float flashCounter;
 
 	private SpriteRenderer playerSprite;
+	private SFXManager sFXManager;
+
 	void Start () {
 		playerCurrentHealth = playerMaxHealth;
 		playerSprite = GetComponent<SpriteRenderer>();
+		sFXManager = FindObjectOfType<SFXManager>();
 	}
 
 	void Update () {
 		if (playerCurrentHealth <= 0) {
+			sFXManager.playerDead.Play();
 			gameObject.SetActive(false);
 		}
 
@@ -42,6 +46,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		if (hitPoints < 0) {
 			flashActive = true;
 			flashCounter = flashLength;
+			sFXManager.playerHurt.Play();
 		}
 	}
 

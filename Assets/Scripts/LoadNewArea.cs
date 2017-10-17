@@ -19,8 +19,8 @@ public class LoadNewArea : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.name == "Player") {
-			SceneManager.LoadScene(levelToLoad);
 			player.startPoint = exitPoint;
+			SceneManager.LoadScene(levelToLoad);
 		}
 	}
 }

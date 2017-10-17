@@ -11,6 +11,8 @@ public class PlayerStartPoint : MonoBehaviour {
 	void Start () {
 		Vector3 currentPosition = transform.position;
 		player = FindObjectOfType<PlayerController>();
+		print("player.startPoint" + player.startPoint);
+		print("pointName" + pointName);
 		if (player.startPoint == pointName) {
 			player.transform.position = currentPosition;
 			player.lastMove = startDirection;

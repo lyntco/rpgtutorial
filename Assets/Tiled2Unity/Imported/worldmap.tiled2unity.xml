@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 17/10/2017 10:17:07 AM-->
+<!--Last exported: 17/10/2017 11:48:33 AM-->
 <Tiled2Unity version="1.0.12.4">
   <AssignMaterial mesh="worldmap_mesh_0001" material="roguelikeSheet_transparent" />
   <AssignMaterial mesh="worldmap_mesh_0002" material="roguelikeSheet_transparent" />
