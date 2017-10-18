@@ -13,6 +13,10 @@ public class EnemyHealthManager : MonoBehaviour {
 	public string enemyName;
 	private QuestManager questManager;
 
+	public int maxGoldVal;
+	public int minGoldVal;
+	public GameObject coin;
+
 	void Start () {
 		currentHealth = maxHealth;
 		sprite = GetComponent<SpriteRenderer>();
@@ -25,6 +29,8 @@ public class EnemyHealthManager : MonoBehaviour {
 			questManager.enemyKilled = enemyName;
 			Destroy(gameObject);
 			playerStats.AddExperience(expToGive);
+			GameObject droppedCoin = Instantiate(coin, transform.position, transform.rotation);
+			droppedCoin.GetComponent<CoinPickup>().value = Random.Range(minGoldVal, maxGoldVal);
 		}
 	}
 

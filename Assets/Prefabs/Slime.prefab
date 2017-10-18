@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397224021138798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.69, y: -8.02, z: 0}
+  m_LocalPosition: {x: 21.239998, y: -21.604998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,6 +131,9 @@ MonoBehaviour:
   maxHealth: 5
   expToGive: 25
   enemyName: RedSlime
+  maxGoldVal: 1
+  minGoldVal: 5
+  coin: {fileID: 1645027699318926, guid: 277948ff89b48463f8aeb0ad82e2a1c2, type: 2}
 --- !u!114 &114595893461913240
 MonoBehaviour:
   m_ObjectHideFlags: 1
