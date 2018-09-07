@@ -2680,7 +2680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeControllers: []
   maxVolume: 1
-  currentVolume: 0
+  currentVolume: 1
 --- !u!1001 &1560969845
 Prefab:
   m_ObjectHideFlags: 0
